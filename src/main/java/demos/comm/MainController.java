@@ -13,7 +13,7 @@ public class MainController {
         System.out.println("index");
         System.out.println("change");
 
-        return "index";
+        return "home";
     }
 
     @RequestMapping("/main")
