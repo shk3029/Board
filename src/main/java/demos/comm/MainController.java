@@ -20,6 +20,7 @@ public class MainController {
     public String Main(Model model) throws Exception {
         System.out.println("main");
         System.out.println("i'm jongseon in SSG PC");
+        System.out.println("권한체크");
         return "home";
 
     }
