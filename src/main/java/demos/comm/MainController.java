@@ -11,6 +11,7 @@ public class MainController {
     @RequestMapping("/")
     public String Index(Model model) throws Exception {
         System.out.println("index");
+        System.out.println("change");
         return "home";
     }
 
