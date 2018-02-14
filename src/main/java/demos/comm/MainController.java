@@ -19,6 +19,7 @@ public class MainController {
     @RequestMapping("/main")
     public String Main(Model model) throws Exception {
         System.out.println("main");
+        System.out.println("i'm jongseon in SSG PC");
         return "home";
 
     }
