@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class MainController {
 
     @RequestMapping("/")
-    public String Index(Model model) throws Exception {
+    public String Index(Model model) {
         System.out.println("index");
         System.out.println("change");
         System.out.println("계정테스트");
@@ -17,7 +17,7 @@ public class MainController {
     }
 
     @RequestMapping("/main")
-    public String Main(Model model) throws Exception {
+    public String Main(Model model) {
         System.out.println("main");
         System.out.println("i'm jongseon in SSG PC");
         System.out.println("권한체크");
