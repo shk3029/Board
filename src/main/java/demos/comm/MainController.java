@@ -11,7 +11,7 @@ public class MainController {
     public String Index(Model model) {
         System.out.println("index");
         System.out.println("change");
-        System.out.println("계정테스트");
+        System.out.println("계정테스트d");
         System.out.println("mac my name - ");
         System.out.println("DB까지 완료 이제 mybatis 연동시작");
         return "home";
