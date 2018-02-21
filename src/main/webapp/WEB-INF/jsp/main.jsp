@@ -11,6 +11,6 @@
     <title>Title</title>
 </head>
 <body>
-드디어 나옴
+스프링 게시판 Main 
 </body>
 </html>

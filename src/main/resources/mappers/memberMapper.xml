@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+  <mapper namespace="member">
+  	
+  	<select id="loginCheck" resultType="String">
+  		SELECT USER_NAME AS userName FROM TBL_MEMBER
+  		WHERE USER_ID = #{userId}
+  		AND  USER_PW = #{userPw}	
+  	</select>
+  	
+  	<select id="infoMember" resultType="demos.comm.dao.MemberDAO">
+  		SELECT 
+  			  USER_NAME AS userNmae
+  		 	  USER_ID AS userId
+  			  USER_EMAIL AS userEmail
+  			  USER_REGDATE AS userRegdate
+  		FROM  TBL_MEMBER
+  		WHERE USER_ID = #{userId}
+  		AND   USER_PW = #{userPw}
+  	</select>
+  	
+  </mapper>
