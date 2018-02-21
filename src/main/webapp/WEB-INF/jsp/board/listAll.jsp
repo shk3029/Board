@@ -4,7 +4,6 @@
 <%@ page session="false" %>
 
 
-<%@ include file="../include/header.jsp" %>
 <table class="table table-bordered">
 	<tr>
 		<th style="width: 10px">BNO</th>
@@ -16,20 +15,17 @@
 	<c:forEach items="${list}" var="boardVO">
 		<tr>
 			<td>${boardVO.bno}</td>
-			<td><a href='/board/read?bno=${boardVO.bno}'>${boardVO.title }</td>
+			<td><a href='/board/read?bno=${boardVO.bno}'>${boardVO.title}</td>
 			<td>${boardVO.writer }</td>
 			<td><fmt:formatDate pattern="yyyy-MM-dd HH:mm"
 				value="${boardVO.regdate}"/></td>
-			<td><span class="badge bg-red">${boardVO.viewcnt }</span>
+			<td><span class="badge bg-red">${boardVO.viewcnt}</span>
 		</tr>
 	</c:forEach>
 </table>
 <div class="box-booter">
 	<button type="submit" class="btn btn-primary">REGISTER</button>
 </div>
-
-
-<%@ include file="../include/footer.jsp" %>
 
 <script>
 	var result = '${msg}';

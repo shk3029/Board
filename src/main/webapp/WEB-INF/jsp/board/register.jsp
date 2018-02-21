@@ -1,5 +1,4 @@
-<%@ include file="../include/header.jsp" %>
-	<!--  form의 속성이 post로 지정된 것과 action이 지정되지 않았다는 것을 주목 -->
+
 	<form role="form" method="post">
 		<div class="box-body">
 		  <div class="form-group">
@@ -26,8 +25,6 @@
 		</div>
 	</form>
 	
-<%@ include file="../include/footer.jsp" %>
-
 <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
 <script type="text/javascript">
 

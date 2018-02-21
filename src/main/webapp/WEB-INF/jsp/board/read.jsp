@@ -2,8 +2,6 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ page session="false" %>
-<%@ include file="../include/header.jsp" %>
-
 <form role="form" method="post">
 	<input type='hidden' name='bno' value="${boardVO.bno}">
 </form>
@@ -29,8 +27,6 @@
 	<button type="submit" class="btn btn-danger">REMOVE</button>
 	<button type="submit" class="btn btn-primary">LIST ALL</button>
 </div>
-
-<%@ include file="../include/footer.jsp" %>
 <!-- 제이쿼리를 이용해서 변경된 화면의 버튼 처리 -->
 <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
 <script type="text/javascript">
