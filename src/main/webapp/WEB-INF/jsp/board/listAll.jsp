@@ -26,8 +26,8 @@
 <div class="box-booter">
 	<button type="submit" class="btn btn-primary">REGISTER</button>
 </div>
-
-<script>
+<script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+<script type="text/javascript">
 	var result = '${msg}';
 	if(result == 'SUCCESS') {
 		alert('FINISH');
