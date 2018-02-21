@@ -18,7 +18,8 @@ public class MemberController {
 	MemberService memberService;
 	
 	@RequestMapping("/login")
-	public void login() {	
+	public void login(Model model) {	
+		model.addAttribute("msg", "login");
 	}
 	
 	@RequestMapping("/loginCheck")
