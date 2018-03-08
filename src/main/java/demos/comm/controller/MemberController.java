@@ -19,25 +19,28 @@ public class MemberController {
 	
 	@RequestMapping("/login")
 	public void login(Model model) {	
+		System.out.println(">>Login>>Controller");
 		model.addAttribute("msg", "login");
 	}
 	
 	@RequestMapping("/loginCheck")
 	public String loginCehck(Model model, MemberVO member, HttpSession session) {
+		System.out.println(">>LoginCheck>>Controller");
 		boolean result = memberService.loginCheck(member, session);
 		String view = null;
 		if(result) {
 			model.addAttribute("msg","success");
-			view = "jsp/main";
+			view = "/main";
 		} else {
 			model.addAttribute("msg", "fail");
-			view = "login";
+			view = "/member/login";
 		}	
 		return view;
 	}
 	
 	@RequestMapping("/logout")
 	public String logout(Model model, HttpSession session) {
+		System.out.println(">>Loginout>>Controller");
 		String view = "/login";
 		memberService.logout(session);
 		model.addAttribute("msg", "logout");

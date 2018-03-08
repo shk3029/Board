@@ -11,11 +11,11 @@
   		AND  USER_PW = #{userPw}	
   	</select>
   	
-  	<select id="infoMember" resultType="demos.comm.dao.MemberDAO">
+  	<select id="infoMember" resultType="demos.comm.domain.MemberVO">
   		SELECT 
-  			  USER_NAME AS userNmae
-  		 	  USER_ID AS userId
-  			  USER_EMAIL AS userEmail
+  			  USER_NAME AS userName,
+  		 	  USER_ID AS userId,
+  			  USER_EMAIL AS userEmail,
   			  USER_REGDATE AS userRegdate
   		FROM  TBL_MEMBER
   		WHERE USER_ID = #{userId}

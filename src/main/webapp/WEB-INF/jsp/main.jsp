@@ -1,16 +1,18 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: js
-  Date: 2018. 2. 13.
-  Time: PM 5:03
-  To change this template use File | Settings | File Templates.
---%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page language="java" contentType="text/html; charset=EUC-KR"
+    pageEncoding="EUC-KR"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-    <title>Title</title>
+    <title>MAIN</title>
 </head>
 <body>
-ìŠ¤í”„ë§ ê²Œì‹œíŒ Main 
+<h2> ½ºÇÁ¸µ °Ô½ÃÆÇ Main ÆäÀÌÁöÀÔ´Ï´Ù. </h2>
+ID : ${sessionScope.userId }
+
+${sessionScope.userName}´Ô ¾È³çÇá¼¼¿ä!
+
 </body>
 </html>
