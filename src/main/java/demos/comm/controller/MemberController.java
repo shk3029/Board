@@ -41,7 +41,7 @@ public class MemberController {
 	@RequestMapping("/logout")
 	public String logout(Model model, HttpSession session) {
 		System.out.println(">>Loginout>>Controller");
-		String view = "/login";
+		String view = "/member/login";
 		memberService.logout(session);
 		model.addAttribute("msg", "logout");
 		return view;

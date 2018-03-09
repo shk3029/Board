@@ -1,18 +1,38 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
+<c:set var="userId" value="${sessionScope.userId}"/>
+<c:set var="userName" value="${sessionScope.userName}"/>
+
+<%@ include file="/WEB-INF/jsp/layout/topMenu.jsp" %>
+
 <html>
 <head>
     <title>MAIN</title>
 </head>
 <body>
-<h2> ½ºÇÁ¸µ °Ô½ÃÆÇ Main ÆäÀÌÁöÀÔ´Ï´Ù. </h2>
-ID : ${sessionScope.userId }
+<h2> ìŠ¤í”„ë§ ê²Œì‹œíŒ Main í˜ì´ì§€ì…ë‹ˆë‹¤. </h2>
+<c:if test="${not empty userId}">
+<h1> ID : ${sessionScope.userId } </h1>
+${sessionScope.userName}ë‹˜ ì•ˆë…•í•˜ì„¸ìš”!
+</c:if>
 
-${sessionScope.userName}´Ô ¾È³çÇá¼¼¿ä!
-
+<c:if test="${empty userId}">
+<h1> ë¨¼ì € ë¡œê·¸ì¸ì„ í•´ì£¼ì„¸ìš”. </h1>
+</c:if>
 </body>
 </html>
+
+
+<script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+<script type="text/javascript">
+// ì´ì²˜ëŸ¼ í•˜ë©´ ì„¸ì…˜ì´ ë‚ ë¼ê° 
+/* 	$(document).ready(function(){
+		$('#board').click(function(event){
+				location.href = '/board/listAll';
+		});
+	}); */
+</script>

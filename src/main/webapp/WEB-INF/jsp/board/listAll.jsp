@@ -3,7 +3,7 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ page session="false" %>
 
-
+<%@ include file="/WEB-INF/jsp/layout/topMenu.jsp" %>
 <table class="table table-bordered">
 	<tr>
 		<th style="width: 10px">BNO</th>
