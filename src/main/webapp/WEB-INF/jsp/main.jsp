@@ -37,4 +37,5 @@ ${sessionScope.userName}(id: ${sessionScope.userId })님 안녕하세요! 아직
 				location.href = '/board/listAll';
 		});
 	}); */
+	document.title = "메인 페이지";
 </script>

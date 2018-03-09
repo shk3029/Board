@@ -50,6 +50,7 @@
 		self.location="/board/listAll";
 	});
 	
+	document.title = "게시판 읽기";
 </script>
 
 

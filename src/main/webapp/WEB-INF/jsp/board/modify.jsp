@@ -47,6 +47,7 @@
 		formObj.submit();
 	});
 	
+	document.title = "게시판 수정";
 </script>
 
 

@@ -4,27 +4,30 @@
 <%@ page session="true" %>
 
 <%@ include file="/WEB-INF/jsp/layout/topMenu.jsp" %>
-<table class="table table-bordered">
+
+<h1> 게시판 </h1>
+<table border="1", width="600px">
 	<tr>
-		<th style="width: 10px">BNO</th>
-		<th> TITLE </th>
-		<th> WRITER </th>
-		<th> REGDATE</th>
-		<th style="width:40px">VIEWCNT</th>
+		<th> 번호 </th>
+		<th> 제목  </th>
+		<th> 작성자  </th>
+		<th> 작성일 </th>
+		<th> 조회수 </th>
 	</tr>
 	<c:forEach items="${list}" var="boardVO">
 		<tr>
 			<td>${boardVO.bno}</td>
-			<td><a href='/board/read?bno=${boardVO.bno}'>${boardVO.title}</td>
+			<td><a href='/board/read?bno=${boardVO.bno}'>${boardVO.title}</a></td>
 			<td>${boardVO.writer }</td>
 			<td><fmt:formatDate pattern="yyyy-MM-dd HH:mm"
 				value="${boardVO.regdate}"/></td>
-			<td><span class="badge bg-red">${boardVO.viewcnt}</span>
+			<td>${boardVO.viewcnt}</td>
 		</tr>
 	</c:forEach>
 </table>
+<br>
 <div class="box-booter">
-	<button type="submit" class="btn btn-primary">REGISTER</button>
+	<button type="submit" class="btn btn-primary"> 글 작성하기</button>
 </div>
 <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
 <script type="text/javascript">
@@ -37,6 +40,7 @@
 		self.location = "/board/register";
 	});
 	
+	document.title = "게시판 목록";
 	
 </script>
 

@@ -10,7 +10,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
-<title>Insert title here</title>
+<title> 로그인 페이지 </title>
 </head>
 <body>
 	<h2> Login 페이지 </h2>
@@ -51,6 +51,7 @@
 
 <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
 <script type="text/javascript">
+	
 	$(document).ready(function(){
 		
 		var registerCheck = ${needRegister};

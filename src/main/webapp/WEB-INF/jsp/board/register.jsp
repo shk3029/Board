@@ -40,4 +40,5 @@
 		self.location="/board/listAll";
 	});
 
+	document.title = "게시판 글쓰기";
 </script>
