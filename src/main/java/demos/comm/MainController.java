@@ -11,8 +11,7 @@ public class MainController {
     @RequestMapping(value = "/main",  method = RequestMethod.GET)
     public void Main(Model model) throws Exception {
         System.out.println("main");
-        System.out.println("i'm jongseon in SSG PC");
-        System.out.println("권한체크");
+        System.out.println("JS MainController");
     }
 
 }

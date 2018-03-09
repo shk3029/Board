@@ -1,7 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
-<%@ page session="false" %>
+<%@ page session="true" %>
+
+<%@ include file="/WEB-INF/jsp/layout/topMenu.jsp" %>
 <form role="form" method="post">
 
 	<div class="box-body">
@@ -19,7 +21,7 @@
 		</div>
 		<div class='form-group'>
 			<label for="exampleInputEmail1">Writer</label>
-			<input type="text" name="writer" class="form-control" value="${boardVO.writer}" >
+			<input type="text" name="writer" class="form-control" value="${boardVO.writer}" style="background-color: #e2e2e2;" readOnly>
 		</div>
 	</div>
 	

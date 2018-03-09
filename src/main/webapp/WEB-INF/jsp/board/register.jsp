@@ -1,3 +1,11 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@ page session="true" %>
+<c:set var="userId" value="${sessionScope.userId}"/>
+<c:set var="userName" value="${sessionScope.userName}" />
+
+<%@ include file="/WEB-INF/jsp/layout/topMenu.jsp" %>
 
 	<form role="form" method="post">
 		<div class="box-body">
@@ -14,7 +22,7 @@
 		 <div class="form-group">
 		 	<label for="exampleInputEamil1">Writer</label>	
 		 	<input type="text"
-		 		 	name="writer" class="form-control" placeholder="Enter Writer">
+		 		 	name="writer" class="form-control" placeholder="Enter Writer"  value="${userName}" readonly style="background-color: #e2e2e2;">
 		 </div>
 		</div>
 		<!-- / box - body -->

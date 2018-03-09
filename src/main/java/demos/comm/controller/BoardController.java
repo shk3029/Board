@@ -1,5 +1,7 @@
 package demos.comm.controller;
 
+import javax.servlet.http.HttpSession;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,8 +24,15 @@ public class BoardController {
 	private BoardService service;
 	
 	@RequestMapping(value="/register", method = RequestMethod.GET)
-	public void registerGET(BoardVO board, Model model) throws Exception {
+	public String registerGET(BoardVO board, Model model, HttpSession session, RedirectAttributes rttr) throws Exception {
 		logger.info("register get......");
+		logger.info("session?" + session.getAttribute("userName"));
+		if(session.getAttribute("userName") == null) {
+			rttr.addFlashAttribute("needRegister", true);
+			return "redirect:/member/login";
+		} else {
+			return "/board/register";
+		}
 	}
 	
 	@RequestMapping(value="/register", method = RequestMethod.POST)
