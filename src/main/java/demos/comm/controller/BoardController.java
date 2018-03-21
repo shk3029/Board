@@ -1,5 +1,7 @@
 package demos.comm.controller;
 
+import java.util.List;
+
 import javax.servlet.http.HttpSession;
 
 import org.slf4j.Logger;
@@ -21,7 +23,7 @@ public class BoardController {
 	private static final Logger logger = LoggerFactory.getLogger(BoardController.class);
 	
 	@Autowired
-	private BoardService service;
+	private BoardService boardservice;
 	
 	@RequestMapping(value="/register", method = RequestMethod.GET)
 	public String registerGET(BoardVO board, Model model, HttpSession session, RedirectAttributes rttr) throws Exception {
@@ -41,39 +43,44 @@ public class BoardController {
 		logger.info("regist post....");
 		logger.info(board.toString());
 		
-		service.regist(board);
+		boardservice.regist(board);
 
 		rttr.addFlashAttribute("msg", "SUCCESS");
 		return "redirect:/board/listAll";
 	}
 	
-	@RequestMapping(value="/listAll", method = RequestMethod.GET)
-	public void listAll(Model model) throws Exception {
+	@RequestMapping(value="/listAll")
+	public void listAll(Model model, @RequestParam(defaultValue="title") String searchOption, @RequestParam(defaultValue="") String keyword) throws Exception {
 		logger.info("show all list.............");
-		model.addAttribute("list", service.listAll());
+		logger.info("searchOption : "+ searchOption + ">>>>> keyword" + keyword );
+		List<BoardVO> list = boardservice.listAll(searchOption, keyword);
+		
+		model.addAttribute("list", list);
+		model.addAttribute("searchOption", searchOption);
+		model.addAttribute("keyword", keyword);
 	}
 	
 	@RequestMapping(value="/read", method = RequestMethod.GET)
 	public void read(@RequestParam("bno") int bno, Model model) throws Exception {
-		model.addAttribute("boardVO", service.read(bno));
+		model.addAttribute("boardVO", boardservice.read(bno));
 	}
 	
 	@RequestMapping(value="/remove", method= RequestMethod.POST)
 	public String remove(@RequestParam("bno") int bno, RedirectAttributes rttr) throws Exception {
-		service.remove(bno);
+		boardservice.remove(bno);
 		rttr.addFlashAttribute("msg", "SUCCESS");
 		return "redirect:/board/listAll";
 	}
 	
 	@RequestMapping(value="/modify", method=RequestMethod.GET)
 	public void modifyGET(int bno, Model model) throws Exception {
-		model.addAttribute(service.read(bno));
+		model.addAttribute(boardservice.read(bno));
 	}
 	
 	@RequestMapping(value="/modify", method=RequestMethod.POST)
 	public String modifyPOST(BoardVO board, RedirectAttributes rttr) throws Exception {
 		logger.info("mod post......");
-		service.modify(board);
+		boardservice.modify(board);
 		rttr.addFlashAttribute("msg", "SUCCESS");
 		return "redirect:/board/listAll";
 	}

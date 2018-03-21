@@ -6,6 +6,18 @@
 <%@ include file="/WEB-INF/jsp/layout/topMenu.jsp" %>
 
 <h1> 게시판 </h1>
+<form name="form" method="post">
+	<select name="searchOption">
+		<option value="all" <c:if test="${searchOption == 'all'}">selected="selected"</c:if>>제목+내용+이름 </option>
+		<option value="writer" <c:if test="${searchOption == 'writer'}">selected="selected"</c:if>> 이름 </option>
+		<option value="content" <c:if test="${searchOption == 'content'}">selected="selected"</c:if>> 내용 </option>
+		<option value="title" <c:if test="${searchOption == 'title'}">selected="selected"</c:if>> 제목 </option>
+	</select>
+	<input name="keyword" value="${keyword}">
+	<input type="submit" class="search-title" value="조회">
+</form>
+<br>
+
 <table border="1", width="600px">
 	<tr>
 		<th> 번호 </th>
@@ -41,7 +53,7 @@
 	});
 	
 	document.title = "게시판 목록";
-	
+
 </script>
 
 

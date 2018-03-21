@@ -14,6 +14,8 @@ public interface BoardDAO {
 	
 	public void delete(Integer bno) throws Exception;
 	
-	public List<BoardVO> listAll() throws Exception;
+	public List<BoardVO> listAll(String searchOption, String keyword) throws Exception;
+	
+	public int countArticle(String searchOption, String keyword) throws Exception;
 	
 }

@@ -1,6 +1,8 @@
 package demos.comm.dao;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -41,10 +43,20 @@ public class BoardDAOImpl implements BoardDAO {
 	}
 
 	@Override
-	public List<BoardVO> listAll() throws Exception {
+	public List<BoardVO> listAll(String searchOption, String keyword) throws Exception {
 		// TODO Auto-generated method stub
-		return session.selectList(namespace+".listAll");
+		Map<String, String> map = new HashMap<String, String>();
+		map.put("searchOption", searchOption);
+		map.put("keyword", keyword);
+		return session.selectList(namespace+".listAll", map);
 	}
-	
+	// http://doublesprogramming.tistory.com/96
+	@Override
+	public int countArticle(String searchOption, String keyword) throws Exception {
+		Map<String, String> map = new HashMap<String, String>();
+		map.put("searchOption", searchOption);
+		map.put("keyword", keyword);
+		return session.selectOne(namespace + ".countArticle", map);
+	}
 
 }

@@ -28,14 +28,33 @@
  	</delete>
  	
  	<select id="listAll" resultType="demos.comm.domain.BoardVO">
- 	<![CDATA[
+
  	SELECT 
  		bno, title, content, writer, regdate, viewcnt
  	FROM
  		tbl_board
- 	WHERE bno > 0
+ 	<include refid="search"></include>
  	ORDER BY BNO DESC, REGDATE DESC
- 	]]>
+
  	</select>
  	
+ 	<select id="countArticle" resultType="int">
+ 		SELECT COUNT(*) FROM TBL_BOARD
+ 		<include refid="search"></include>
+ 	</select>
+ 	
+ 	<sql id="search">
+ 		<choose>
+ 			<!--  검색옵션이 전체 검색일경우  -->
+ 			<when test="searchOption == 'all'">
+ 				WHERE writer LIKE '%'||#{keyword}||'%'
+ 				OR content LIKE '%'||#{keyword}||'%'
+ 				OR title LIKE '%'||#{keyword}||'%'
+ 			</when>
+ 			<!--  전체 검색이 아닐 경우 -->
+ 			<otherwise>
+ 				WHERE ${searchOption} LIKE '%'||#{keyword}||'%'
+ 			</otherwise>
+ 		</choose>
+ 	</sql>
  </mapper>

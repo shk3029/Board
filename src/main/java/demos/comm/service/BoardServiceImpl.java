@@ -7,7 +7,6 @@ import org.springframework.stereotype.Service;
 
 import demos.comm.dao.BoardDAO;
 import demos.comm.domain.BoardVO;
-
 /**
  * @author 171179
  *
@@ -39,7 +38,13 @@ public class BoardServiceImpl implements BoardService {
 	}
 	
 	@Override
-	public List<BoardVO> listAll() throws Exception {
-		return dao.listAll();
+	public List<BoardVO> listAll(String searchOption, String keyword) throws Exception {
+		return dao.listAll(searchOption, keyword);
 	}
+	
+	@Override
+	public int countArticle(String searchOption, String keyword) throws Exception {
+		return dao.countArticle(searchOption, keyword);
+	}
+	
 }
