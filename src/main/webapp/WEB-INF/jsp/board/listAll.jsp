@@ -8,8 +8,8 @@
 <h1> 게시판 </h1>
 <form name="form" method="post">
 	<select name="searchOption">
-		<option value="all" <c:if test="${searchOption == 'all'}">selected="selected"</c:if>>제목+내용+이름 </option>
-		<option value="writer" <c:if test="${searchOption == 'writer'}">selected="selected"</c:if>> 이름 </option>
+		<option value="all" <c:if test="${searchOption == 'all'}">selected="selected"</c:if>>전체</option>
+		<option value="writer" <c:if test="${searchOption == 'writer'}">selected="selected"</c:if>> 작성자 </option>
 		<option value="content" <c:if test="${searchOption == 'content'}">selected="selected"</c:if>> 내용 </option>
 		<option value="title" <c:if test="${searchOption == 'title'}">selected="selected"</c:if>> 제목 </option>
 	</select>

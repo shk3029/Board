@@ -52,9 +52,10 @@ public class BoardController {
 	@RequestMapping(value="/listAll")
 	public void listAll(Model model, @RequestParam(defaultValue="title") String searchOption, @RequestParam(defaultValue="") String keyword) throws Exception {
 		logger.info("show all list.............");
-		logger.info("searchOption : "+ searchOption + ">>>>> keyword" + keyword );
+		logger.info("searchOption : "+ searchOption + ">>>>> keyword : " + keyword );
 		List<BoardVO> list = boardservice.listAll(searchOption, keyword);
-		
+	
+		logger.info("listSize" + list.size());
 		model.addAttribute("list", list);
 		model.addAttribute("searchOption", searchOption);
 		model.addAttribute("keyword", keyword);
