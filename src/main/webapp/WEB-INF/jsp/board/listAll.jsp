@@ -5,7 +5,7 @@
 
 <%@ include file="/WEB-INF/jsp/layout/topMenu.jsp" %>
 
-<h1> 게시판 </h1>
+<h1> 게시판 <button type="submit" class="btn btn-primary"> 새글 작성하기</button> </h1>
 <form name="form" method="post">
 	<select name="searchOption">
 		<option value="all" <c:if test="${searchOption == 'all'}">selected="selected"</c:if>>전체</option>
@@ -15,11 +15,9 @@
 	</select>
 	<input name="keyword" value="${keyword}">
 	<input type="submit" class="search-title" value="조회">
-	<br>
-	<button type="submit" class="btn btn-primary"> 새글 작성하기</button>
 </form>
-<br>
 
+<br>
 <table border="1", width="600px">
 	<tr>
 		<th> 번호 </th>
