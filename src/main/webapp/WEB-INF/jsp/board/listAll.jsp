@@ -15,6 +15,8 @@
 	</select>
 	<input name="keyword" value="${keyword}">
 	<input type="submit" class="search-title" value="조회">
+	<br>
+	<button type="submit" class="btn btn-primary"> 새글 작성하기</button>
 </form>
 <br>
 
@@ -38,9 +40,7 @@
 	</c:forEach>
 </table>
 <br>
-<div class="box-booter">
-	<button type="submit" class="btn btn-primary"> 글 작성하기</button>
-</div>
+
 <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
 <script type="text/javascript">
 	var result = '${msg}';
