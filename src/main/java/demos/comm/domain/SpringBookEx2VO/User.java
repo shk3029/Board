@@ -1,4 +1,4 @@
-package demos.comm.domain;
+package demos.comm.domain.SpringBookEx2VO;
 
 public class User {
     String id;

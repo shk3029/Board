@@ -1,4 +1,6 @@
-package demos.comm.domain;
+package demos.comm.domain.SpringBookEx2VO;
+
+import demos.comm.domain.SpringBookEx2VO.Printer;
 
 public class StringPrinter implements Printer {
     private StringBuffer buffer = new StringBuffer();
