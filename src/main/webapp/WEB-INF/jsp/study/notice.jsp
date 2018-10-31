@@ -3,4 +3,10 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ page session="true" %>
 
-EX1
+<%@ include file="/WEB-INF/jsp/layout/topMenu.jsp" %>
+
+스터디 공지용뷰
+
+
+
+

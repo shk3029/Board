@@ -7,7 +7,6 @@ import javax.servlet.http.HttpSession;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.support.StaticApplicationContext;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -86,14 +85,4 @@ public class BoardController {
 		rttr.addFlashAttribute("msg", "SUCCESS");
 		return "redirect:/board/listAll";
 	}
-
-	@RequestMapping(value="/test" , method=RequestMethod.GET)
-    public void test() {
-	    // IoC 컨테이너 생성, 생성과 동시에 컨테이너로 동작
-	    StaticApplicationContext ac = new StaticApplicationContext();
-
-
-
-    }
-	
 }

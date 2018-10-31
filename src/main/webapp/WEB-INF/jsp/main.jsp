@@ -7,18 +7,20 @@
 
 <c:set var="userId" value="${sessionScope.userId}"/>
 <c:set var="userName" value="${sessionScope.userName}"/>
+<c:set var="userEmail" value="${sessionScope.userEmail}"/>
 
 <%@ include file="/WEB-INF/jsp/layout/topMenu.jsp" %>
-
 <html>
 <head>
     <title>MAIN</title>
 </head>
 <body>
-<h2> JS Main 페이지입니다. </h2>
+<h2> Main </h2>
 <c:if test="${not empty userId}">
-${sessionScope.userName}(id: ${sessionScope.userId })님 안녕하세요! 아직은 게시판 기능만 존재합니다!
+${userName}(${userId})님 안녕하세요.
 <h1> <a href="/board/listAll">게시판으로 바로가기</a></h1>
+<h1> <a href="/study/raffle">스터디 추첨 바로가기</a></h1>
+<h1> <a href="/study/notice">스터디 공지 바로가기</a></h1>
 </c:if>
 
 <c:if test="${empty userId}">

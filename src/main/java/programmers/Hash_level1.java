@@ -3,6 +3,9 @@ package programmers;
 import java.util.HashMap;
 import java.util.Iterator;
 
+/* 효율성 실패 
+ * 문제 : https://programmers.co.kr/learn/courses/30/lessons/42576
+ */
 public class Hash_level1 {
 
 	public static void main(String[] args) {
@@ -38,18 +41,32 @@ public class Hash_level1 {
         }
       
         return answer;
-/*      
- * 		다른사람풀이  
- * 		HashMap<String, Integer> solutionMap2 = new HashMap<>();
-        for(String player : participant) solutionMap.put(player, solutionMap.getOrDefault(player,0) + 1);       
-        for(String player : completion) solutionMap.put(player, solutionMap.get(player) - 1);
-        
-        for(String key : solutionMap.keySet()) {
-        	if(solutionMap.get(key) != 0) {
-        		answer = key;
-        	}
+/*		
+ * 		테스트케이스 성공 / 효율성 실패 
+ *      HashMap<String, Boolean> solutionMap = new HashMap<>();
+        for(int i=0; i<participant.length; i++) {
+         boolean flag = false;
+         for(int j=0; j<completion.length; j++) {
+          if(participant[i].equals(completion[j])) {
+           flag = true;
+           completion[j] = "";
+           break;
+          } 
+         }
+         solutionMap.put(participant[i], flag);  
         }
-        return answer;*/
+        
+        
+        Iterator<String> iterator = solutionMap.keySet().iterator();
+        while(iterator.hasNext()) {
+         String key = (String) iterator.next();
+         if(!solutionMap.get(key)) {
+          answer = answer + key;
+         }
+        }
+      
+        return answer;
+ */
     }
 
 }

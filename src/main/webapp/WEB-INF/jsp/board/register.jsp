@@ -4,6 +4,7 @@
 <%@ page session="true" %>
 <c:set var="userId" value="${sessionScope.userId}"/>
 <c:set var="userName" value="${sessionScope.userName}" />
+<c:set var="userEmail" value="${sessionScope.userEmail}"/>
 
 <%@ include file="/WEB-INF/jsp/layout/topMenu.jsp" %>
 <h1> 글 작성하기 </h1>

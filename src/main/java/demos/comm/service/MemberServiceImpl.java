@@ -26,6 +26,7 @@ public class MemberServiceImpl implements MemberService {
 			// 세션 변수 등록 -- 세션 관련 학습필요
 			session.setAttribute("userId", vo2.getUserId());
 			session.setAttribute("userName", vo2.getUserName());
+			session.setAttribute("userEmail", vo2.getUserEmail());
 		}
 		return result;
 	}
