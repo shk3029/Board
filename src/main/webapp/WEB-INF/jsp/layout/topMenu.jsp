@@ -8,15 +8,15 @@
 <c:set var="userName" value="${sessionScope.userName}" />
 <c:set var="userEmail" value="${sessionScope.userEmail}"/>
 
-<a href="/board/listAll">게시판</a>
-<a href="/main">메인으로</a>
+<a href="/board/listAll"><strong>[게시판]</strong></a>
+<a href="/main"><strong>[메인]</strong></a>
 <c:choose>
 	<c:when test="${empty userId}">
-		<a href="/member/login">로그인</a>
+		<a href="/member/login"><strong>로그인</strong></a>
 	</c:when>
 	<c:otherwise>
 		${userName}(${userId}, ${userEmail})님이 접속중입니다.
-		<a href="/member/logout">로그아웃</a>
+		<a href="/member/logout"><strong>[로그아웃]</strong></a>
 	</c:otherwise>
 </c:choose>
 

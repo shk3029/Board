@@ -55,8 +55,7 @@
 		<artifactId>jstl</artifactId>
 		<version>1.2</version>
 	</dependency>
-	
-	
+
 	<!-- @Inject -->
 	<dependency>
 		<groupId>javax.inject</groupId>

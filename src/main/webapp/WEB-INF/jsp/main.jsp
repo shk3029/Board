@@ -9,24 +9,109 @@
 <c:set var="userName" value="${sessionScope.userName}"/>
 <c:set var="userEmail" value="${sessionScope.userEmail}"/>
 
-<%@ include file="/WEB-INF/jsp/layout/topMenu.jsp" %>
 <html>
 <head>
     <title>MAIN</title>
+<style>
+@import url(//fonts.googleapis.com/earlyaccess/nanumpenscript.css);
+h1{
+     font-family: 'Nanum Pen Script', cursive;
+}
+ a:link { color: red; text-decoration: none;}
+ a:visited { color: black; text-decoration: none;}
+ a:hover { color: blue; text-decoration: underline;}
+</style>
+ <meta charset="utf-8" />
+ <meta name="viewport" content="width=device-width, initial-scale=1" />
+ <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/main.css">
 </head>
+
+
 <body>
-<h2> Main </h2>
-<c:if test="${not empty userId}">
-${userName}(${userId})님 안녕하세요.
-<h1> <a href="/board/listAll">게시판으로 바로가기</a></h1>
-<h1> <a href="/study/raffle">스터디 추첨 바로가기</a></h1>
-<h1> <a href="/study/notice">스터디 공지 바로가기</a></h1>
-</c:if>
-
-<c:if test="${empty userId}">
-<h1> 먼저 <a href="/member/login">로그인</a>을 해주세요. </h1>
-
-</c:if>
+	<!-- Header -->
+	<header id="header">
+	
+		<div class="logo"><a href="/main">Study <span>with co-workers </span></a></div>
+	</header>
+	<section id="main">
+	<div class="inner">
+		<div class="content">
+			<c:choose>
+				<c:when test="${empty userId}">
+				</c:when>
+				<c:otherwise>
+					<p style="text-align:center">${userName}(${userId}, ${userEmail})님이 접속중입니다.
+					<a href="/member/logout">[LOGOUT]</a></p>
+				</c:otherwise>
+			</c:choose>	
+		</div>
+	<!-- One -->
+		<c:if test="${not empty userId}">
+			<section id="one" class="wrapper style1">
+	
+				<div class="image fit flush">
+					<img src="images/pic02.jpg" alt="" />
+				</div>
+				<header class="special">
+					<h2>공지사항</h2>
+				
+					<a href="/board/listAll"><p>공지사항 전체보기</p></a>
+				</header>
+				<div class="content">
+					<p> 이번주 공지</p>
+					<p> 이번주 공지</p>
+					<p> 이번주 공지</p>
+				</div>
+			</section>
+	
+		<!-- Two -->
+			<section id="two" class="wrapper style2">
+				<header>
+					<a href="/study/raffle" onClick="window.open(this.href, '', 'width=600, height=450'); return false;"><h2>사다리 타기</h2></a>
+					<p>발표자를 정해봅시다</p>
+				</header>
+			</section>
+	
+		<!-- Three -->
+			<section id="three" class="wrapper">
+				<div class="spotlight">
+					<div class="image flush"><img src="images/pic06.jpg" alt="" /></div>
+					<div class="inner">
+						<h3>Spring</h3>
+						<p>스프링을 공부합시다</p>
+					</div>
+				</div>
+				<div class="spotlight alt">
+					<div class="image flush"><img src="images/pic07.jpg" alt="" /></div>
+					<div  class="inner">
+						<h3>JavaScript</h3>
+						<p>자바스크립트를 공부합시다.</p>	
+					</div>
+				</div>
+				<div class="spotlight">
+					<div class="image flush"><img src="images/pic08.jpg" alt="" /></div>
+					<div class="inner">
+						<h3>Etc...</h3>
+						<p>....</p>
+					</div>
+				</div>
+			</section>
+		</c:if>
+		<c:if test="${empty userId}">
+			<section id="one" class="wrapper style1">
+	
+				<div class="image fit flush">
+					<img src="images/pic02.jpg" alt="" />
+				</div>
+				<header class="special">
+					<a href="/member/login"><strong><h2>LOGIN</h2></strong></a>
+					<p>로그인을 먼저 해주세요.</p>	
+				</header>
+			</section>					
+		</c:if>
+	</div>
+</section>
+		
 </body>
 </html>
 

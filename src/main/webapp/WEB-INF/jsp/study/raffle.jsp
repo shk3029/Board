@@ -3,14 +3,4 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ page session="true" %>
 
-<%@ include file="/WEB-INF/jsp/layout/topMenu.jsp" %>
-
-스터디 추첨용뷰
-
-
-
-
-
-
-
-
+<%@ include file="/WEB-INF/jsp/study/raffleMain.jsp" %>
