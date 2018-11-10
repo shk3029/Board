@@ -2,11 +2,12 @@ package programmers;
 
 import java.util.HashMap;
 import java.util.Iterator;
+import java.util.Map;
 
 /* 효율성 실패 
  * 문제 : https://programmers.co.kr/learn/courses/30/lessons/42576
  */
-public class Hash_level1 {
+public class Hash_1 {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
@@ -14,12 +15,12 @@ public class Hash_level1 {
 		System.out.println("start");		
 		String[] participant = {"mislav", "stanko", "mislav", "ana"};
 		String[] completion = {"stanko", "ana", "mislav"};
-		String result = solution(participant, completion);
+		String result = solution2(participant, completion);
 		System.out.println(result);
 		long end = System.currentTimeMillis(); //프로그램이 끝나는 시점 계산
 		System.out.println( "실행 시간 : " + ( end - start ));
 	}
-	
+
 	public static String solution(String[] participant, String[] completion) {
         String answer = "";
         
@@ -67,6 +68,28 @@ public class Hash_level1 {
       
         return answer;
  */
+    }
+    // 영우
+    public static String solution2(String[] participant, String[] completion) {
+        String answer = "";
+
+        Map<String, Integer> hashMap = new HashMap<>();
+
+        for(String person : participant) {
+            hashMap.put(person, hashMap.getOrDefault(person, 0)+1);
+        }
+
+        for(String person : completion) {
+            hashMap.put(person, hashMap.get(person) -1);
+        }
+
+        for(String key : hashMap.keySet()) {
+            if(hashMap.get(key) !=  0) {
+                answer = key;
+            }
+        }
+
+        return answer;
     }
 
 }

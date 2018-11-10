@@ -1,28 +1,27 @@
 package programmers;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 /*
  *  https://programmers.co.kr/learn/courses/30/lessons/42577
  *  합격 (테스트 o 효율성 o)
  */ 
-public class Hash_level2 {
+public class Hash_2 {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		System.out.println("start");		
 		String[] phone_book = {"97674223", "1195524421","112", "99", "97"};
-		boolean result = solution(phone_book);
+		boolean result = solution2(phone_book);
 		System.out.println(result);
 	}
 	
 	public static boolean solution(String[] phone_book) {
         boolean answer = true;
-        Arrays.sort(phone_book);
-        for(String phonebook : phone_book) System.out.println(">>>>>>>>>>>>" + phonebook);
-        
-        
-   /*     List<String> list = new ArrayList<>();
+
+        List<String> list = new ArrayList<>();
         
         for(int i=0; i<phone_book.length; i++) {
         	if(i==0) {
@@ -40,27 +39,25 @@ public class Hash_level2 {
                  	}      			
         		}
         	}
-        }*/
-         
-      /*  HashMap<String, Boolean> map = new HashMap<>();
-        for(String number : phone_book) map.put(number, false);
- 
-        Iterator<String> iterator = map.keySet().iterator();
-        while(iterator.hasNext()) {
-        	String key = (String) iterator.next();
-        	 for(int i=0; i<phone_book.length; i++) {
-             	if(phone_book[i].length() <= key.length()) {
-             		if(key.contains(phone_book[i]) && key.indexOf(phone_book[i]) == 0 && !key.equals(phone_book[i]) ) {
-             			answer = false;
-             		}
-             	} else {
-             		if(phone_book[i].contains(key) && phone_book[i].indexOf(key) == 0 && !key.equals(phone_book[i])) {
-             			answer = false;
-             		}
-             	}
-             }        	
-        } */
+        }
         return answer;
     }
+    public static boolean solution2(String[] phone_book) {
+        boolean answer = true;
 
+        Arrays.sort(phone_book);
+
+        for(int i=0; i< phone_book.length-1; i++) {
+            int current = phone_book[i].length();
+            int next = phone_book[i+1].length();
+
+            if(current < next) {
+                if(phone_book[i+1].contains(phone_book[i])) {
+                    answer =false;
+                    break;
+                }
+            }
+        }
+        return answer;
+    }
 }
