@@ -1,3 +1,5 @@
+https://doublesprogramming.tistory.com/112
+
 CREATE TABLE TBL_BOARD(
 	BNO INT NOT NULL auto_increment,
     TITLE VARCHAR(200) NOT NULL,
