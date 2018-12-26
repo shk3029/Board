@@ -30,8 +30,7 @@ h1{
 <body>
 	<!-- Header -->
 	<header id="header">
-	
-		<div class="logo"><a href="/main">Study <span>with co-workers </span></a></div>
+		<div class="logo"><a href="/main">Study <span>by JS </span></a></div>
 	</header>
 	<section id="main">
 	<div class="inner">
@@ -48,9 +47,9 @@ h1{
 	<!-- One -->
 		<c:if test="${not empty userId}">
 			<section id="one" class="wrapper style1">
-	
+
 				<div class="image fit flush">
-					<img src="images/pic02.jpg" alt="" />
+					<img src="/resources/images/pic02.jpg" alt="" />
 				</div>
 				<header class="special">
 					<h2>공지사항</h2>
@@ -75,21 +74,21 @@ h1{
 		<!-- Three -->
 			<section id="three" class="wrapper">
 				<div class="spotlight">
-					<div class="image flush"><img src="images/pic06.jpg" alt="" /></div>
+					<div class="image flush"><img src="/resources/images/pic06.jpg" alt="" /></div>
 					<div class="inner">
 						<h3>Spring</h3>
 						<p>스프링을 공부합시다</p>
 					</div>
 				</div>
 				<div class="spotlight alt">
-					<div class="image flush"><img src="images/pic07.jpg" alt="" /></div>
+					<div class="image flush"><img src="/resources/images/pic07.jpg" alt="" /></div>
 					<div  class="inner">
 						<h3>JavaScript</h3>
 						<p>자바스크립트를 공부합시다.</p>	
 					</div>
 				</div>
 				<div class="spotlight">
-					<div class="image flush"><img src="images/pic08.jpg" alt="" /></div>
+					<div class="image flush"><img src="/resources/images/pic08.jpg" alt="" /></div>
 					<div class="inner">
 						<h3>Etc...</h3>
 						<p>....</p>
@@ -101,7 +100,7 @@ h1{
 			<section id="one" class="wrapper style1">
 	
 				<div class="image fit flush">
-					<img src="images/pic02.jpg" alt="" />
+					<img src="/resources/images/pic02.jpg" alt="" />
 				</div>
 				<header class="special">
 					<a href="/member/login"><strong><h2>LOGIN</h2></strong></a>
