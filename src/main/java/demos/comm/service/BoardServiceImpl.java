@@ -6,7 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import demos.comm.dao.BoardDAO;
-import demos.comm.domain.BoardVO;
+import demos.comm.domain.Board;
 /**
  * @author 171179
  *
@@ -18,17 +18,17 @@ public class BoardServiceImpl implements BoardService {
 	private BoardDAO dao;
 
 	@Override
-	public void regist(BoardVO board) throws Exception {
+	public void regist(Board board) throws Exception {
 		dao.create(board);
 	}
 	
 	@Override
-	public BoardVO read(Integer bno) throws Exception {
+	public Board read(Integer bno) throws Exception {
 		return dao.read(bno);
 	}
 	
 	@Override
-	public void modify(BoardVO board) throws Exception {
+	public void modify(Board board) throws Exception {
 		dao.update(board);
 	}
 	
@@ -38,7 +38,7 @@ public class BoardServiceImpl implements BoardService {
 	}
 	
 	@Override
-	public List<BoardVO> listAll(String searchOption, String keyword) throws Exception {
+	public List<Board> listAll(String searchOption, String keyword) throws Exception {
 		return dao.listAll(searchOption, keyword);
 	}
 	

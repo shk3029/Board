@@ -2,7 +2,7 @@ package demos.comm.domain;
 
 import java.util.Date;
 
-public class MemberVO {
+public class Member {
 	
 	private String userId;
 	private String userPw;
@@ -10,8 +10,11 @@ public class MemberVO {
 	private String userEmail;
 	private Date userRegdate;
 	private Date userUpdatedate;
-	
-	
+
+	public Member(String userId) {
+		this.userId = userId;
+	}
+
 	public String getUserId() {
 		return userId;
 	}

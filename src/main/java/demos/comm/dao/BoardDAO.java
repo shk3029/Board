@@ -2,19 +2,19 @@ package demos.comm.dao;
 
 import java.util.List;
 
-import demos.comm.domain.BoardVO;
+import demos.comm.domain.Board;
 
 public interface BoardDAO {
 	
-	public void create(BoardVO vo) throws Exception;
+	public void create(Board vo) throws Exception;
 	
-	public BoardVO read(Integer bno) throws Exception;
+	public Board read(Integer bno) throws Exception;
 	
-	public void update(BoardVO vo) throws Exception;
+	public void update(Board vo) throws Exception;
 	
 	public void delete(Integer bno) throws Exception;
 	
-	public List<BoardVO> listAll(String searchOption, String keyword) throws Exception;
+	public List<Board> listAll(String searchOption, String keyword) throws Exception;
 	
 	public int countArticle(String searchOption, String keyword) throws Exception;
 	

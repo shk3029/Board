@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
-import demos.comm.domain.BoardVO;
+import demos.comm.domain.Board;
 import demos.comm.service.BoardService;
 
 @Controller
@@ -26,7 +26,7 @@ public class BoardController {
 	private BoardService boardservice;
 	
 	@RequestMapping(value="/register", method = RequestMethod.GET)
-	public String registerGET(BoardVO board, Model model, HttpSession session, RedirectAttributes rttr) throws Exception {
+	public String registerGET(Board board, Model model, HttpSession session, RedirectAttributes rttr) throws Exception {
 		logger.info("register get......");
 		logger.info("session?" + session.getAttribute("userName"));
 		if(session.getAttribute("userName") == null) {
@@ -38,7 +38,7 @@ public class BoardController {
 	}
 	
 	@RequestMapping(value="/register", method = RequestMethod.POST)
-	public String registPOST(BoardVO board, RedirectAttributes rttr) throws Exception {
+	public String registPOST(Board board, RedirectAttributes rttr) throws Exception {
 		
 		logger.info("regist post....");
 		logger.info(board.toString());
@@ -53,7 +53,7 @@ public class BoardController {
 	public void listAll(Model model, @RequestParam(defaultValue="title") String searchOption, @RequestParam(defaultValue="") String keyword) throws Exception {
 		logger.info("show all list.............");
 		logger.info("searchOption : "+ searchOption + ">>>>> keyword : " + keyword );
-		List<BoardVO> list = boardservice.listAll(searchOption, keyword);
+		List<Board> list = boardservice.listAll(searchOption, keyword);
 	
 		logger.info("listSize" + list.size());
 		model.addAttribute("list", list);
@@ -79,7 +79,7 @@ public class BoardController {
 	}
 	
 	@RequestMapping(value="/modify", method=RequestMethod.POST)
-	public String modifyPOST(BoardVO board, RedirectAttributes rttr) throws Exception {
+	public String modifyPOST(Board board, RedirectAttributes rttr) throws Exception {
 		logger.info("mod post......");
 		boardservice.modify(board);
 		rttr.addFlashAttribute("msg", "SUCCESS");

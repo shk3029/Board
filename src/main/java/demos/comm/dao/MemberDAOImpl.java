@@ -6,7 +6,7 @@ import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import demos.comm.domain.MemberVO;
+import demos.comm.domain.Member;
 
 @Component // 현재 클래스를 스프링에서 관리하는 dao bean으로 등록
 public class MemberDAOImpl implements MemberDAO {
@@ -17,14 +17,14 @@ public class MemberDAOImpl implements MemberDAO {
 	private static String namespace = "member";
 	
 	@Override
-	public boolean loginCheck(MemberVO member) {
+	public boolean loginCheck(Member member) {
 		// TODO Auto-generated method stub
 		String name = session.selectOne(namespace+".loginCheck", member);
 		return (name != null) ? true : false;
 	}
 
 	@Override
-	public MemberVO infoMember(MemberVO member) {
+	public Member infoMember(Member member) {
 		// TODO Auto-generated method stub
 		return session.selectOne(namespace+".infoMember", member);
 	}

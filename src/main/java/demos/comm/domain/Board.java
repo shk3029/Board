@@ -2,7 +2,7 @@ package demos.comm.domain;
 
 import java.util.Date;
 
-public class BoardVO {
+public class Board {
 	private Integer bno;
 	private String title;
 	private String content;

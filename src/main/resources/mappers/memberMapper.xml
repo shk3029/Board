@@ -11,7 +11,7 @@
   		AND  USER_PW = #{userPw}	
   	</select>
   	
-  	<select id="infoMember" resultType="demos.comm.domain.MemberVO">
+  	<select id="infoMember" resultType="demos.comm.domain.Member">
   		SELECT 
   			  USER_NAME AS userName,
   		 	  USER_ID AS userId,

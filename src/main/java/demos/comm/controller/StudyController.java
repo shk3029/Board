@@ -7,10 +7,9 @@ import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
-import demos.comm.domain.BoardVO;
+import demos.comm.domain.Board;
 
 @Controller
 @RequestMapping("/study/*")
@@ -19,12 +18,12 @@ public class StudyController {
 	
 
 	@RequestMapping(value="/notice")
-	public String notice(BoardVO board, Model model, HttpSession session, RedirectAttributes rttr) throws Exception {
+	public String notice(Board board, Model model, HttpSession session, RedirectAttributes rttr) throws Exception {
 		return "/study/notice";
 	}
 	
 	@RequestMapping(value="/raffle")
-	public String raffle(BoardVO board, RedirectAttributes rttr) throws Exception {
+	public String raffle(Board board, RedirectAttributes rttr) throws Exception {
 		return "/study/raffle";
 	}
 }

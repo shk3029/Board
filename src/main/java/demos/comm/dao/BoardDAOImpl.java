@@ -8,7 +8,7 @@ import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import demos.comm.domain.BoardVO;
+import demos.comm.domain.Board;
 
 @Component
 public class BoardDAOImpl implements BoardDAO {
@@ -19,19 +19,19 @@ public class BoardDAOImpl implements BoardDAO {
 	private static String namespace = "demos.comm.mappers.BoardMapper";
 
 	@Override
-	public void create(BoardVO vo) throws Exception {
+	public void create(Board vo) throws Exception {
 		// TODO Auto-generated method stub
 		session.insert(namespace+".create",vo);
 	}
 
 	@Override
-	public BoardVO read(Integer bno) throws Exception {
+	public Board read(Integer bno) throws Exception {
 		// TODO Auto-generated method stub
 		return session.selectOne(namespace+".read", bno);
 	}
 
 	@Override
-	public void update(BoardVO bo) throws Exception {
+	public void update(Board bo) throws Exception {
 		// TODO Auto-generated method stub
 		session.update(namespace+".update",bo);
 	}
@@ -43,7 +43,7 @@ public class BoardDAOImpl implements BoardDAO {
 	}
 
 	@Override
-	public List<BoardVO> listAll(String searchOption, String keyword) throws Exception {
+	public List<Board> listAll(String searchOption, String keyword) throws Exception {
 		// TODO Auto-generated method stub
 		Map<String, String> map = new HashMap<String, String>();
 		map.put("searchOption", searchOption);

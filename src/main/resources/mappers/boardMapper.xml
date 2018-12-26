@@ -10,7 +10,7 @@
  	value(#{title}, #{content}, #{writer})
  	</insert>
  	
- 	<select id="read" resultType="demos.comm.domain.BoardVO">
+ 	<select id="read" resultType="demos.comm.domain.Board">
  	select 
  	 	bno, title, content, writer, regdate, viewcnt
  	from 
@@ -27,7 +27,7 @@
  	delete from tbl_board where bno = #{bno}
  	</delete>
  	
- 	<select id="listAll"  parameterType="java.util.HashMap" resultType="demos.comm.domain.BoardVO">
+ 	<select id="listAll"  parameterType="java.util.HashMap" resultType="demos.comm.domain.Board">
 
  	SELECT 
  		bno, title, content, writer, regdate, viewcnt

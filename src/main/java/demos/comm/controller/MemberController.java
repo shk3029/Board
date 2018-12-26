@@ -7,7 +7,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import demos.comm.domain.MemberVO;
+import demos.comm.domain.Member;
 import demos.comm.service.MemberService;
 
 @Controller
@@ -24,7 +24,7 @@ public class MemberController {
 	}
 	
 	@RequestMapping("/loginCheck")
-	public String loginCehck(Model model, MemberVO member, HttpSession session) {
+	public String loginCehck(Model model, Member member, HttpSession session) {
 		System.out.println(">>LoginCheck>>Controller");
 		boolean result = memberService.loginCheck(member, session);
 		String view = null;

@@ -6,7 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import demos.comm.dao.MemberDAO;
-import demos.comm.domain.MemberVO;
+import demos.comm.domain.Member;
 
 @Service
 public class MemberServiceImpl implements MemberService {
@@ -18,11 +18,11 @@ public class MemberServiceImpl implements MemberService {
 	MemberDAO memberDao;
 	
 	@Override
-	public boolean loginCheck(MemberVO member, HttpSession session) {
+	public boolean loginCheck(Member member, HttpSession session) {
 		boolean result = memberDao.loginCheck(member);
 		if(result) {
 			// 로그인이 체크되면 세션에 등록
-			MemberVO vo2 = infoMember(member);
+			Member vo2 = infoMember(member);
 			// 세션 변수 등록 -- 세션 관련 학습필요
 			session.setAttribute("userId", vo2.getUserId());
 			session.setAttribute("userName", vo2.getUserName());
@@ -32,7 +32,7 @@ public class MemberServiceImpl implements MemberService {
 	}
 
 	@Override
-	public MemberVO infoMember(MemberVO member) {
+	public Member infoMember(Member member) {
 		// 회원의 정보를 가져옴
 		return memberDao.infoMember(member);
 	}
